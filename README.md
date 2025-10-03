@@ -127,3 +127,6 @@ Trong đó:
 * `training_out.zip`
 * `public_test_input.zip`
 * `training_input.zip`
+
+## Tham khảo
+-  https://competition.viettel.vn/contest/online_vbkt_r1_public
