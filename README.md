@@ -92,8 +92,14 @@ Hệ thống nộp phải là một pipeline thống nhất:
 ## Cách Thức Chấm Điểm
 
 Điểm tổng hợp cho 2 nhiệm vụ được tính theo công thức:
+
 $$\text{Score} = \alpha \cdot \text{Score}_{\text{Extraction}} + \beta \cdot \text{Score}_{\text{QA}}$$
-Trong đó: $\alpha$: hệ số cho phần trích xuất; $\beta$: hệ số cho phần truy vấn; $\text{Score}_{\text{Extraction}}$: điểm trích xuất dữ liệu; $\text{Score}_{\text{QA}}$: điểm truy vấn dữ liệu.
+
+Trong đó:
+* $\alpha$: hệ số cho phần trích xuất.
+* $\beta$: hệ số cho phần truy vấn.
+* $\text{Score}_{\text{Extraction}}$: điểm trích xuất dữ liệu (thang 100).
+* $\text{Score}_{\text{QA}}$: điểm truy vấn dữ liệu (thang 100).
 
 ### Nhiệm Vụ 1 (Extraction)
 
