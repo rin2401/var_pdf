@@ -5,6 +5,17 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "apted>=1.0.3",
+    "bs4>=0.0.2",
+    "fire>=0.7.1",
+    "ipykernel>=6.30.1",
+    "levenshtein>=0.27.1",
+    "lxml>=6.0.2",
+    "nltk>=3.9.2",
     "pandas>=2.3.3",
+    "pandoc>=2.4",
     "pdfplumber>=0.11.7",
+    "pip>=25.2",
+    "pymupdf4llm>=0.0.27",
+    "scipy>=1.16.2",
 ]
