@@ -6,7 +6,7 @@ import glob
 
 
 INPUT_DIR = "../data/public_test_input"
-OUTPUT_DIR = "../submit/pymuf4llm_output"
+OUTPUT_DIR = "../submit/pymuf4llm_public_output"
 
 
 def extract_to_markdown(pdf_path, md_path):
@@ -29,12 +29,16 @@ def baseline_extraction(input_dir, output_dir):
 
 
 def baseline_qa(question_csv_path):
-    df = pd.read_csv(question_csv_path)
-    items = []
-    for idx, row in df.iterrows():
-        items.append({"num_correct": 1, "answers": "A"})
+    # df = pd.read_csv(question_csv_path)
+    # items = []
+    # for idx, row in df.iterrows():
+    #     items.append({"num_correct": 1, "answers": "A"})
+    # subdf = pd.DataFrame(items)
 
-    subdf = pd.DataFrame(items)
+    question_csv_path = "nbs/qa_public_pred.csv"
+    df = pd.read_csv(question_csv_path)
+    subdf = df[["num_correct", "answers"]]
+
     return subdf
 
 
