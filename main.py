@@ -5,8 +5,11 @@ import pymupdf4llm
 import glob
 
 
-INPUT_DIR = "../data/public_test_input"
-OUTPUT_DIR = "../submit/pymuf4llm_public_output"
+# INPUT_DIR = "../data/public_test_input"
+# OUTPUT_DIR = "../submit/pymuf4llm_public_search_output"
+
+INPUT_DIR = "../data/private_test_input"
+OUTPUT_DIR = "../submit/pymuf4llm_private_search_output"
 
 
 def extract_to_markdown(pdf_path, md_path):
@@ -35,7 +38,7 @@ def baseline_qa(question_csv_path):
     #     items.append({"num_correct": 1, "answers": "A"})
     # subdf = pd.DataFrame(items)
 
-    question_csv_path = "nbs/qa_public_pred.csv"
+    question_csv_path = "nbs/qa_private_search_pred.csv"
     df = pd.read_csv(question_csv_path)
     subdf = df[["num_correct", "answers"]]
 
