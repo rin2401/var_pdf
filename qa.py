@@ -7,14 +7,28 @@ import pandas as pd
 from vllm import LLM, SamplingParams
 
 
-df = pd.read_csv("../data/public_test_input/question.csv")
-df.head()
+# df = pd.read_csv("../data/public_test_input/question.csv")
+df = pd.read_csv("qa_private_search.csv")
+
 data = df.to_dict("records")
 
 
-TEMPLATE = """Hãy chọn các đáp án đúng cho câu hỏi trắc nghiệm sau
+# TEMPLATE = """Hãy chọn các đáp án đúng cho câu hỏi trắc nghiệm sau
+# Ouput format: Các đáp án đúng cách nhau bởi dấu ",", eg: A,B,C,D
+# Chỉ trả về các chữ cái ABCD, không trả kèm gì thêm
+
+# Câu hỏi: {Question}
+# A. {A}
+# B. {B}
+# C. {C}
+# D. {D}
+# """
+
+TEMPLATE = """Hãy chọn các đáp án đúng cho câu hỏi trắc nghiệm sau dựa vào tài liệu
 Ouput format: Các đáp án đúng cách nhau bởi dấu ",", eg: A,B,C,D
 Chỉ trả về các chữ cái ABCD, không trả kèm gì thêm
+
+Tài liệu: {context}
 
 Câu hỏi: {Question}
 A. {A}
@@ -22,6 +36,7 @@ B. {B}
 C. {C}
 D. {D}
 """
+
 
 x = data[0]
 print(TEMPLATE.format(**x))
